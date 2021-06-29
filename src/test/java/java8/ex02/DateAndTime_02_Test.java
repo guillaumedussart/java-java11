@@ -48,9 +48,9 @@ public class DateAndTime_02_Test {
 
 
         // TODO valoriser les différentes variables afin de rendre le test passant
-        int year = 0;
-        Month month = null;
-        int dayOfMonth = 0;
+        int year = result.getYear();
+        Month month = result.getMonth();
+        int dayOfMonth = result.getDayOfMonth();
 
 
         assertThat(year, is(1990));
