@@ -26,7 +26,6 @@ public class DateAndTime_01_Test {
 
         // une date est mutable... :-(
         // TODO modifier le jour de la date pour que le test soit passant
-        Date date2 = new Date(117, 2, 25, 01, 02, 03);
         Calendar c = Calendar.getInstance();
         c.setTime(date);
         c.add(Calendar.DATE, 1);
