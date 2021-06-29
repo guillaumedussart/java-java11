@@ -2,9 +2,11 @@ package java8.ex02;
 
 import org.junit.Test;
 
+import java.text.SimpleDateFormat;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoField;
+import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAdjusters;
 import java.time.temporal.UnsupportedTemporalTypeException;
 import java.util.Date;
@@ -61,11 +63,11 @@ public class DateAndTime_02_Test {
 
         // TODO créer un objet LocalDate à la date 11/03/2015
         // TODO utiliser la méthode of
-        LocalDate localDate = null;
-
+        LocalDate localDate = LocalDate.of(2015,03,11);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd - MM - YYYY");
         // TODO Formatter la date pour que le test soit passant
-        String result = null;
-
+        String result = formatter.format(localDate);
+        System.out.println(result);
         assertThat(result, is("11 - 03 - 2015"));
     }
 
@@ -74,10 +76,11 @@ public class DateAndTime_02_Test {
 
         // TODO créer un objet LocalDate à la date 11/03/2015
         // TODO utiliser la méthode of
-        LocalDate localDate = null;
-
+        LocalDate localDate = LocalDate.of(2015,03,11);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/YYYY hh:mm:ss");
         // TODO Formatter la date pour avoir l'affichage suivant : "11/03/2015 00:00:00"
-        localDate.format(null);
+        String result =localDate.format(formatter);
+        assertThat(result,is("11/03/2015 00:00:00"));
     }
 
     @Test
@@ -85,10 +88,9 @@ public class DateAndTime_02_Test {
 
         // TODO créer un objet LocalDate à la date 10/01/2000
         // TODO utiliser la méthode of
-        LocalDate localDate = null;
-
+        LocalDate localDate = LocalDate.of(2000,01,10);
         // TODO transformer la date précédente en 05/02/2015
-        LocalDate result = null;
+        LocalDate result = localDate.plus(15, ChronoUnit.YEARS).plus(1,ChronoUnit.MONTHS).minus(5,ChronoUnit.DAYS);
 
         assertThat(result.getYear(), is(2015));
         assertThat(result.getMonth(), is(Month.FEBRUARY));
