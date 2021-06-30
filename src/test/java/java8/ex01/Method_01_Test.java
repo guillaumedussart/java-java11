@@ -18,9 +18,9 @@ public class Method_01_Test {
         List<Person> findAll();
 
         // TODO créer une méthode int sumAge()
-        default int sumAge(){
-            int age= 0;
-            for(Person person:findAll()){
+        default int sumAge() {
+            int age = 0;
+            for (Person person : findAll()) {
                 age += person.getAge();
             }
             return age;

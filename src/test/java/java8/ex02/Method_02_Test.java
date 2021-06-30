@@ -36,11 +36,11 @@ public class Method_02_Test {
         @Override
         public String format() {
             int count = 0;
-            for(Person person: findAll()){
+            for (Person person : findAll()) {
                 count++;
             }
             System.out.println(count);
-            return "DaoA["+count+" persons]";
+            return "DaoA[" + count + " persons]";
         }
 
         // TODO redéfinir la méthode String format()
