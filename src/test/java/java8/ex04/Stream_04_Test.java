@@ -1,8 +1,12 @@
 package java8.ex04;
 
 
+import java8.data.Data;
+import java8.data.domain.Customer;
 import org.junit.Test;
 
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static org.hamcrest.Matchers.*;
@@ -15,8 +19,9 @@ public class Stream_04_Test {
 
     @Test
     public void test_of() throws Exception {
+        List<Customer> customers = new Data().getCustomers();
         // Construire un stream permettant de rendre le test passant
-        Stream<String> result = null;
+        Stream<String> result = null;//customers.stream().map(c->c.getFirstname()).findAny();
 
         assertThat(result.toArray(), arrayContaining("Alexandra", "Cyril", "Johnny", "Marion", "Sophie"));
     }
